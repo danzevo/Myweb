@@ -40,7 +40,11 @@
 	}
 </script>
 <div class='container'>
-	<h1><?php echo $title ?></h1>
+	<div class='col-xs-10'>
+		<div class='page-header'>
+			<h1><?php echo $title ?></h1>
+		</div>
+	</div>
 	<div class='row top'>
 		<div class='col-xs-12'>
 			<button type='button' class='btn btn-primary' onclick='addData()'>Baru</button>

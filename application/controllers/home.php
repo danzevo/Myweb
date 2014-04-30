@@ -45,6 +45,36 @@ class Home extends CI_Controller {
 				);
 		
 		load('index', $data['content'], $data);
+	}	
+	
+	function view_data($id) {
+		$art = $this->artikel_model->get_row_artikel($id);
+		
+		$data = array (
+					'art'		=> $art
+					,'title'	=> 'View Artikel'
+					,'content'	=> 'view_data'
+				);
+		
+		load('index', $data['content'], $data);
+	}
+	
+	function profile($msg='',$error='') {
+		$list = $this->artikel_model->get_user(array('ID_USER' => trim($this->session->USERDATA('id_user'))));
+		$user = $list->row_array();
+		
+		$msg 	= str_replace('_', ' ', $msg);
+		$error 	= str_replace('_', ' ', $error);
+		
+		$data = array (
+					'user'		=> $user,
+					'title'		=> 'My Profile',
+					'content'	=> 'profile',
+					'msg'		=> $msg,
+					'error'		=> $error
+				);
+				
+		load('index', $data['content'], $data);
 	}
 	
 	function save() {
@@ -95,15 +125,76 @@ class Home extends CI_Controller {
 		echo json_encode($this->msg);
 	}
 	
-	function view_data($id) {
-		$art = $this->artikel_model->get_row_artikel($id);
+	function update_profile($id_user='')
+	{
+		$rules = array(
+					array(
+						'field'		=> 'nama',
+						'rules'		=> 'trim|required'
+						),
+					array(
+						'field'		=> 'email',
+						'rules'		=> 'trim|required|valid_email'
+						),
+					);
 		
-		$data = array (
-					'art'		=> $art
-					,'title'	=> 'View Artikel'
-					,'content'	=> 'view_data'
-				);
+		$this->form_validation->set_rules($rules);
 		
-		load('index', $data['content'], $data);
+		if($this->form_validation->run() === false) {
+			$msg = 'Nama Atau Email harus terisi';
+			$this->profile($msg);
+		}else {
+			$config['upload_path']		= APPPATH.'../asset/upload/';
+			$config['allowed_types']	= 'gif|jpg|png';
+			$config['file_name']		= date('dmY').'-'.trim($this->session->userdata('username'));
+			$config['max_width'] 		= 192;
+			$config['max_height'] 		= 192;
+			$config['overwrite'] 		= true;
+			
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			
+			if($this->upload->do_upload('foto'))
+			{
+				$file = $this->upload->data();
+				
+				$file_name = $config['upload_path'].$file['file_name'];	
+			}	
+			else
+			{
+				$file_name = '';
+				$error = $this->upload->display_errors();
+				// $this->profile($error);
+			}	
+			
+			$data = array(
+					'NAMA'		=> $_POST['nama'],
+					'EMAIL'		=> $_POST['email'],
+					'ALAMAT'	=> $_POST['alamat'],
+					'KOTA'		=> $_POST['kota'],
+					'IMAGE'		=> $file_name,
+					);
+			
+			$save = $this->db->update('user', $data, array('ID_USER' => $_POST['id_user']));
+			
+			if($save)
+			{
+				$msg 		= 'Data_Updated';
+				$error 		= strip_tags($error);
+				$error		= str_replace(' ', '_', $error);
+				$error 		= strtolower(str_replace('.', ' ', $error));
+				
+				redirect('home/profile/'.$msg.'/'.$error);
+			}	
+			else
+			{
+				$msg = 'Data_failed_to_update';
+				redirect('home/profile/'.$msg);
+			}	
+			
+		}
+		
+		
+	//	echo $file['file_name'];
 	}
 }

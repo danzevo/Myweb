@@ -24,7 +24,7 @@
 				<li class='dropdown'>
 					<a href='#' class='dropdown-toggle' data-toggle='dropdown'><?php echo $this->session->userdata('username') ?> <b class='caret'></b></a>
 					<ul class='dropdown-menu'>
-						<li><a href='#'>My Profile</a></li>
+						<li><a href='<?php echo site_url('home/profile') ?>'>My Profile</a></li>
 						<li class='divider'></li>
 						<li><a href="<?php echo site_url('login/log_out') ?>">Log Out</a></li>
 					</ul>

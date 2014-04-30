@@ -26,7 +26,11 @@
 	}	
 </script>
 <div class='container'>
-	<h1><?php echo $title ?></h1>
+	<div class='col-xs-10'>
+		<div class='page-header'>
+			<h1><?php echo $title ?></h1>
+		</div>
+	</div>
 	<form id='inputArtikel' role='form'>
 		<div class='row top'>
 			<div id='msgJudul' class='col-xs-3'>
