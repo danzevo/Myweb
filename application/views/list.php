@@ -4,7 +4,7 @@
 			<tr>
 				<th class='text-center' style='width:5%'>No</th>
 				<th class='text-center'>Judul</th>
-				<!--th class='text-center'>Isi</th-->
+				<th class='text-center'>Tanggal Artikel</th>
 				<th class='text-center'>User</th>
 				<th class='text-center' style='width:8%'>*</th>
 			</tr>
@@ -18,7 +18,7 @@
 			<tr>
 				<td><?php echo $no++ ?></td>
 				<td class='text-center'><?php echo $row->JUDUL ?></td>
-				<!--td><?php echo $row->ISI ?></td-->
+				<td class='text-center'><?php echo date('d-m-Y', strtotime($row->TGL_ARTIKEL)) ?></td>
 				<td class='text-center'><?php echo $row->USERNAME ?></td>				
 				<td>
 					<a href='javascript:void(0)' title='Ubah Data' onclick='editData(<?php echo $row->ID_ARTIKEL ?>)'>

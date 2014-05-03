@@ -93,10 +93,14 @@ class Home extends CI_Controller {
 		{
 			$id_artikel = ($_POST['id_artikel'] ? $_POST['id_artikel'] : '');
 			
+			if($id_artikel)
+				$art = $this->artikel_model->get_row_artikel($id_artikel);
+			
 			$data = array(
-					'JUDUL'		=> $_POST['judul']
-					,'ISI'		=> $_POST['isi']
-					,'ID_USER'	=> trim($this->session->userdata('id_user'))
+					'JUDUL'			=> $_POST['judul']
+					,'TGL_ARTIKEL'	=> date('Y-m-d', strtotime($_POST['tgl_artikel']))
+					,'ISI'			=> $_POST['isi']
+					,'ID_USER'		=> ($id_artikel ? $art['ID_USER'] : trim($this->session->userdata('id_user')))
 					);
 			
 			if($id_artikel) {
@@ -218,12 +222,19 @@ class Home extends CI_Controller {
 	}
 	
 	function page_sch_tgl() {
-	
+		$sch_tgl_dari	= ($_POST['sch_tgl_dari'] ? date('Y-m-d', strtotime($_POST['sch_tgl_dari'])) : '');
+		$sch_tgl_ke 	= ($_POST['sch_tgl_dari'] ? date('Y-m-d', strtotime($_POST['sch_tgl_ke'])) : '');
+		
+		if($sch_tgl_dari && $sch_tgl_ke) 
+			$where = "TANGGAL BETWEEN '$sch_tgl_dari' AND '$sch_tgl_ke'";
+		else
+			$where = '';
+			
 		$data = array(
-				'list'		=> $this->artikel_model->get_user(),
+				'list'		=> $this->artikel_model->get_user($where),
 				'content'	=> 'list_sch_tgl'
 				);
-				
+		
 		$this->load->view($data['content'], $data);
 	}
 	
@@ -238,9 +249,19 @@ class Home extends CI_Controller {
 	}
 	
 	function page_sch_aktif() {
-	
+		$filter = (isset($_POST['filter']) ? $_POST['filter'] : '');
+		
+		if($filter == 1)
+			$order = 'NUM_LOGIN';
+		elseif($filter == 2)
+			$order = 'NUM_TAMBAH_ART';
+		elseif($filter == 3)
+			$order = 'NUM_EDIT_ART';
+		else
+			$order = '';
+			
 		$data = array(
-				'list'		=> $this->artikel_model->get_user(),
+				'list'		=> $this->artikel_model->get_user('',$order),
 				'content'	=> 'list_sch_aktif'
 				);
 				

@@ -1,10 +1,10 @@
 <script type='text/javascript'>
 	$.fn.ready(function() {
-		pageLoad(1);
+		pageLoad();
 	});
 	
-	function pageLoad(page) {
-		$.post(site_url+'home/page/'+page,
+	function pageLoad() {
+		$.post(site_url+'home/page/',
 				{},
 				function(result) {
 					$('#contData').html(result);

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 03, 2014 at 07:53 PM
+-- Generation Time: May 04, 2014 at 06:32 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -30,21 +30,20 @@ USE `blog`;
 CREATE TABLE IF NOT EXISTS `artikel` (
   `ID_ARTIKEL` int(11) NOT NULL AUTO_INCREMENT,
   `JUDUL` varchar(100) NOT NULL,
+  `TGL_ARTIKEL` date NOT NULL,
   `ISI` text NOT NULL,
   `ID_USER` int(11) NOT NULL,
   PRIMARY KEY (`ID_ARTIKEL`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `artikel`
 --
 
-INSERT INTO `artikel` (`ID_ARTIKEL`, `JUDUL`, `ISI`, `ID_USER`) VALUES
-(2, 'test', 'tes dan', 5),
-(3, 'test', 'test', 22),
-(4, 'test', 'test', 1),
-(5, 'test 2 upd', 'hello world upd', 1),
-(6, 'test 3 upd', 'test 3 upd', 1);
+INSERT INTO `artikel` (`ID_ARTIKEL`, `JUDUL`, `TGL_ARTIKEL`, `ISI`, `ID_USER`) VALUES
+(4, 'test', '2014-05-05', 'test', 1),
+(7, 'test', '2014-05-08', 'test', 1),
+(8, 'test 3', '2014-05-04', 'test 3', 25);
 
 -- --------------------------------------------------------
 
@@ -76,5 +75,5 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `ALAMAT`, `KOTA`, `TANGGAL`, `AKTIF`, `NUM_LOGIN`, `NUM_TAMBAH_ART`, `NUM_EDIT_ART`, `LEVEL_USER`, `kode`, `IMAGE`) VALUES
-(1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', '2014-05-01', 1, 2, 2, 2, 1, '', 'application/../asset/upload/03052014-admin.jpg'),
-(25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', '2014-05-03', 1, 0, 0, 0, 2, 'f73610399828660b4cca02a0f711db1d', 'application/../asset/upload/03052014-danzevo.jpg');
+(1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', '2014-05-01', 1, 7, 3, 6, 1, '', ''),
+(25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', '2014-05-03', 1, 1, 6, 7, 2, '');

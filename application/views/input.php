@@ -1,4 +1,14 @@
 <script type='text/javascript'>
+	$.fn.ready(function() {
+		$('#tgl_artikel').datepicker({
+			changeMonth: true,
+			changeYear: true,
+			showOtherMonths: true,
+			selectOtherMonths: true,
+			dateFormat: 'dd-mm-yy'
+		});
+	});
+	
 	function saveData() {
 		$.post(site_url+'home/save',
 				$('#inputArtikel').serialize(),
@@ -37,6 +47,12 @@
 				<label for='judul'>Judul Artikel</label>
 				<input type='hidden' id='id_artikel' name='id_artikel' value='<?php echo (isset($art['ID_ARTIKEL']) ? $art['ID_ARTIKEL'] : '') ?>'>
 				<input type='text' id='judul' name='judul' class='form-control' value='<?php echo (isset($art['JUDUL']) ? $art['JUDUL'] : '') ?>' placeholder='Tulis Judul Artikel'>
+			</div>
+		</div>
+		<div class='row top'>
+			<div id='msgJudul' class='col-xs-3'>
+				<label for='tgl_artikel'>Tanggal Artikel</label>
+				<input type='text' id='tgl_artikel' name='tgl_artikel' class='form-control' value='<?php echo (isset($art['TGL_ARTIKEL']) ? $art['TGL_ARTIKEL'] : '') ?>' placeholder='Tanggal Artikel'>
 			</div>
 		</div>
 		<div class='row top'>

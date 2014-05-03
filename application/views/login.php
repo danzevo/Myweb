@@ -6,6 +6,7 @@
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<link rel='stylesheet' href='<?php echo base_url() ?>asset/bootstrap/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='<?php echo base_url() ?>asset/css/jquery-ui-1.10.4.custom.min.css'>
 		<style>
 			html, body{
 				height:85%;
@@ -86,7 +87,8 @@
 				box-shadow:3px 3px 2px 2px #bbdaf7;
 			}
 		</style>
-		<script type='text/javascript' src='<?php echo base_url() ?>asset/jquery-1.11.0.min.js'></script>
+		<script type='text/javascript' src='<?php echo base_url() ?>asset/js/jquery-1.11.0.min.js'></script>
+		<script type='text/javascript' src='<?php echo base_url() ?>asset/js/jquery-ui-1.10.4.custom.min.js'></script>
 		<script type='text/javascript' src='<?php echo base_url() ?>asset/bootstrap/js/bootstrap.min.js'></script>
 		
 		<script type='text/javascript'>

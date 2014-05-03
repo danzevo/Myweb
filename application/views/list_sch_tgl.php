@@ -22,7 +22,7 @@
 				<td class='text-center'><?php echo $row->USERNAME ?></td>
 				<td class='text-center'><?php echo $row->EMAIL ?></td>											
 				<td class='text-center'><?php echo ($row->LEVEL_USER == 1 ? 'Admin' : 'Penulis') ?></td>											
-				<td class='text-center'><?php echo $row->TANGGAL ?></td>											
+				<td class='text-center'><?php echo date('d-m-Y', strtotime($row->TANGGAL)) ?></td>											
 			<?php 	
 				}
 			} ?>

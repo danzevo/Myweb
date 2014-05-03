@@ -12,6 +12,12 @@
 			</div>
 		</div>
 		<div class='row top'>
+			<div id='msgJudul' class='col-xs-3'>
+				<label for='judul'>Tanggal Artikel</label>
+				<p class='form-control-static'><?php echo (isset($art['TGL_ARTIKEL']) ? date('d-m-Y', strtotime($art['TGL_ARTIKEL'])) : '') ?></p>
+			</div>
+		</div>
+		<div class='row top'>
 			<div class='col-xs-4'>
 				<label for='isi'>Isi Artikel</label>
 				<p class='form-control-static'><?php echo (isset($art['ISI']) ? $art['ISI'] : '') ?></p>

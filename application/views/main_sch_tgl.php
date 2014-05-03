@@ -1,11 +1,30 @@
 <script type='text/javascript'>
 	$.fn.ready(function() {
-		pageLoad(1);
+		pageLoad();
+		
+		$('#sch_tgl_dari').val('');
+		$('#sch_tgl_ke').val('');
+		
+		$('#sch_tgl_dari').datepicker({
+			changeMonth: true,
+			changeYear: true,
+			showOtherMonths: true,
+			selectOtherMonths: true,
+			dateFormat: 'dd-mm-yy'
+		});
+		
+		$('#sch_tgl_ke').datepicker({
+			changeMonth: true,
+			changeYear: true,
+			showOtherMonths: true,
+			selectOtherMonths: true,
+			dateFormat: 'dd-mm-yy'
+		});
 	});
 	
-	function pageLoad(page) {
-		$.post(site_url+'home/page_sch_tgl/'+page,
-				{},
+	function pageLoad() {
+		$.post(site_url+'home/page_sch_tgl/',
+				$('#schTglForm').serialize(),
 				function(result) {
 					$('#contData').html(result);
 				}
@@ -20,7 +39,7 @@
 	</div>
 	<div class='row top'>
 		<div class='col-xs-12'>	
-			<form class='form-inline' role='form'>
+			<form id='schTglForm' class='form-inline' role='form'>
 				<div class='form-group'>
 					<label for='sch_tgl_dari'>Dari Tanggal</label>&nbsp;
 					<input type='text' id='sch_tgl_dari' name='sch_tgl_dari' class='form-control'>
@@ -29,7 +48,7 @@
 					<label for='sch_tgl_ke'>Sampai Tanggal</label>&nbsp;
 					<input type='text' id='sch_tgl_ke' name='sch_tgl_ke' class='form-control'>
 				</div>
-				<button type='button' class='btn btn-default'>Cari</button>
+				<button type='button' class='btn btn-default' onclick='pageLoad()'>Cari</button>
 				<div class='pull-right'>
 					<button type='button' class='btn btn-success'>Cetak</button>
 				</div>	

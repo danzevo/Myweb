@@ -49,7 +49,10 @@ class Artikel_model extends CI_Model {
 		return $data;
 	}
 	
-	function get_user($where='') {
+	function get_user($where='', $order='') {
+		if($order)
+		$this->db->order_by($order, 'DESC');
+		
 		if($where)
 		$this->db->or_where($where);
 		
