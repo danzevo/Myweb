@@ -2,7 +2,7 @@
 	<table class='table table-striped table-bordered table-hover'>
 		<thead>
 			<tr>
-				<th class='text-center' style='width:5%'>No<?php echo $this->session->userdata('id_user') ?></th>
+				<th class='text-center' style='width:5%'>No</th>
 				<th class='text-center'>Judul</th>
 				<!--th class='text-center'>Isi</th-->
 				<th class='text-center'>User</th>

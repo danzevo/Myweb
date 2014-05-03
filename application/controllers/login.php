@@ -69,6 +69,10 @@ class Login extends CI_Controller {
 				
 				$this->session->set_userdata($data);
 				
+				$this->db->where('ID_USER', $check['ID_USER']);
+				$this->db->set('NUM_LOGIN', 'NUM_LOGIN+1', FALSE);
+				$this->db->update('user');
+				
 				echo 'berhasil';
 			}else
 			{
@@ -131,6 +135,7 @@ class Login extends CI_Controller {
 						'EMAIL'			=> $email,
 						'ALAMAT'		=> $_POST['alamat'],
 						'KOTA'			=> $_POST['kota'],
+						'TANGGAL'		=> date('Y-m-d'),
 						'LEVEL_USER'	=> $_POST['level_user'],
 						'KODE'			=> $kode,
 					);

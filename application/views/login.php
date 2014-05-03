@@ -68,6 +68,7 @@
 				margin:auto;
 				border:1px solid #6E7290;
 				margin-top:0.5%;
+				margin-top:12%;
 				-webkit-border-top-left-radius:15px;
 				-moz-border-radius-topleft:15px;
 				border-top-left-radius:15px;

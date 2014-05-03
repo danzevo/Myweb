@@ -23,8 +23,7 @@ class Home extends CI_Controller {
 		load('index', $data['content'], $data);
 	}
 	
-	function page($pg=1) {
-		$limit = 5;
+	function page() {
 		
 		$data = array(
 				'list'		=> $this->artikel_model->get_list_artikel()
@@ -100,10 +99,20 @@ class Home extends CI_Controller {
 					,'ID_USER'	=> trim($this->session->userdata('id_user'))
 					);
 			
-			if($id_artikel)
+			if($id_artikel) {
 				$save = $this->db->update('artikel', $data, array('ID_ARTIKEL'=>$id_artikel));
-			else
+				
+				$this->db->where('ID_USER', trim($this->session->userdata('id_user')));
+				$this->db->set('NUM_EDIT_ART', 'NUM_EDIT_ART+1', FALSE);
+				$this->db->update('user');
+			}
+			else {
 				$save = $this->db->insert('artikel', $data);
+				
+				$this->db->where('ID_USER', trim($this->session->userdata('id_user')));
+				$this->db->set('NUM_TAMBAH_ART', 'NUM_TAMBAH_ART+1', FALSE);
+				$this->db->update('user');
+			}
 			
 			if($save)
 				$this->msg['message'] = 'Data Berhasil Disimpan';
@@ -196,5 +205,45 @@ class Home extends CI_Controller {
 		
 		
 	//	echo $file['file_name'];
+	}
+	
+	function main_sch_tgl() {
+		$data = array(
+				'list'		=> $this->artikel_model->get_user(),
+				'content'	=> 'main_sch_tgl',
+				'title'		=> 'Laporan Daftar User Per Periode'
+				);
+				
+		load('index', $data['content'], $data);
+	}
+	
+	function page_sch_tgl() {
+	
+		$data = array(
+				'list'		=> $this->artikel_model->get_user(),
+				'content'	=> 'list_sch_tgl'
+				);
+				
+		$this->load->view($data['content'], $data);
+	}
+	
+	function main_sch_aktif() {
+		$data = array(
+				'list'		=> $this->artikel_model->get_user(),
+				'content'	=> 'main_sch_aktif',
+				'title'		=> 'Laporan Daftar User Aktif'
+				);
+				
+		load('index', $data['content'], $data);
+	}
+	
+	function page_sch_aktif() {
+	
+		$data = array(
+				'list'		=> $this->artikel_model->get_user(),
+				'content'	=> 'list_sch_aktif'
+				);
+				
+		$this->load->view($data['content'], $data);
 	}
 }

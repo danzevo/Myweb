@@ -50,6 +50,7 @@ class Artikel_model extends CI_Model {
 	}
 	
 	function get_user($where='') {
+		if($where)
 		$this->db->or_where($where);
 		
 		$this->db->select('*');

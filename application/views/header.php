@@ -16,7 +16,14 @@
 					<ul class='dropdown-menu' role='menu'>
 						<li><a href="<?php echo site_url('home') ?>">Artikel</a></li>
 						<li class='divider'></li>
-						<li><a href='#'>Laporan</a></li>
+						<li class='dropdown-submenu'>
+							<a tabindex='-1' href='#'>Laporan</a>
+							<ul class='dropdown-menu' role='menu'>
+								<li><a tabindex='-1' href='<?php echo site_url('home/main_sch_tgl') ?>'>Laporan Per Periode</a></li>
+								<li class='divider'></li>
+								<li><a href='<?php echo site_url('home/main_sch_aktif') ?>'>Laporan Aktif User</a></li>
+							</ul>
+						</li>
 					</ul>
 				</li>
 			</ul>
