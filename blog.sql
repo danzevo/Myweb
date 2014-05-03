@@ -81,8 +81,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 <<<<<<< HEAD
 INSERT INTO `user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `ALAMAT`, `KOTA`, `AKTIF`, `NUM_LOGIN`, `NUM_TAMBAH_ART`, `NUM_EDIT_ART`, `LEVEL_USER`, `kode`, `IMAGE`) VALUES
-(1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', 1, 0, 0, 0, 1, '', 'application/../asset/upload/03052014-admin.jpg'),
-(25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', 1, 0, 0, 0, 2, 'f73610399828660b4cca02a0f711db1d', 'application/../asset/upload/03052014-danzevo.jpg');
+(1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', 1, 0, 0, 0, 1, '', ''),
+(25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', 1, 0, 0, 0, 2, 'f73610399828660b4cca02a0f711db1d', '');
 =======
 INSERT INTO `user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `ALAMAT`, `KOTA`, `AKTIF`, `NUM_LOGIN`, `NUM_TAMBAH_ART`, `NUM_EDIT_ART`, `LEVEL_USER`, `kode`) VALUES
 (1, 'dani', 'admin', 'admin@gmail.com', 'admin', '', '', 1, 0, 0, 0, 1, ''),
