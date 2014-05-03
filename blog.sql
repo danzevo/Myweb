@@ -3,15 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
-<<<<<<< HEAD
 -- Generation Time: May 03, 2014 at 07:53 PM
-=======
-<<<<<<< HEAD
--- Generation Time: May 03, 2014 at 04:27 PM
-=======
--- Generation Time: Apr 30, 2014 at 08:22 PM
->>>>>>> 77b89608f41435adf3cc6cbad02374650f9f89ba
->>>>>>> 0e84b6bec35c1cf63a51166af2b1f21e5d838b55
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -75,14 +67,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `NUM_EDIT_ART` int(11) NOT NULL,
   `LEVEL_USER` int(11) NOT NULL,
   `kode` varchar(100) NOT NULL,
-<<<<<<< HEAD
   `IMAGE` varchar(100) NOT NULL,
-=======
-<<<<<<< HEAD
-  `IMAGE` varchar(100) NOT NULL,
-=======
->>>>>>> 77b89608f41435adf3cc6cbad02374650f9f89ba
->>>>>>> 0e84b6bec35c1cf63a51166af2b1f21e5d838b55
   PRIMARY KEY (`ID_USER`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
@@ -90,18 +75,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-<<<<<<< HEAD
 INSERT INTO `user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `ALAMAT`, `KOTA`, `TANGGAL`, `AKTIF`, `NUM_LOGIN`, `NUM_TAMBAH_ART`, `NUM_EDIT_ART`, `LEVEL_USER`, `kode`, `IMAGE`) VALUES
 (1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', '2014-05-01', 1, 2, 2, 2, 1, '', 'application/../asset/upload/03052014-admin.jpg'),
 (25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', '2014-05-03', 1, 0, 0, 0, 2, 'f73610399828660b4cca02a0f711db1d', 'application/../asset/upload/03052014-danzevo.jpg');
-=======
-<<<<<<< HEAD
-INSERT INTO `user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `ALAMAT`, `KOTA`, `AKTIF`, `NUM_LOGIN`, `NUM_TAMBAH_ART`, `NUM_EDIT_ART`, `LEVEL_USER`, `kode`, `IMAGE`) VALUES
-(1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', 1, 0, 0, 0, 1, '', ''),
-(25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', 1, 0, 0, 0, 2, 'f73610399828660b4cca02a0f711db1d', '');
-=======
-INSERT INTO `user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `ALAMAT`, `KOTA`, `AKTIF`, `NUM_LOGIN`, `NUM_TAMBAH_ART`, `NUM_EDIT_ART`, `LEVEL_USER`, `kode`) VALUES
-(1, 'dani', 'admin', 'admin@gmail.com', 'admin', '', '', 1, 0, 0, 0, 1, ''),
-(25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', 1, 0, 0, 0, 2, 'f73610399828660b4cca02a0f711db1d');
->>>>>>> 77b89608f41435adf3cc6cbad02374650f9f89ba
->>>>>>> 0e84b6bec35c1cf63a51166af2b1f21e5d838b55
