@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Generation Time: May 04, 2014 at 06:32 PM
+=======
+-- Generation Time: May 03, 2014 at 07:53 PM
+>>>>>>> 3efa498c1fa084a285d3a579de3412dec2ce2ed0
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -75,5 +79,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `ALAMAT`, `KOTA`, `TANGGAL`, `AKTIF`, `NUM_LOGIN`, `NUM_TAMBAH_ART`, `NUM_EDIT_ART`, `LEVEL_USER`, `kode`, `IMAGE`) VALUES
+<<<<<<< HEAD
 (1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', '2014-05-01', 1, 7, 3, 6, 1, '', ''),
 (25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', '2014-05-03', 1, 1, 6, 7, 2, '');
+=======
+(1, 'dani Nugrahadi', 'admin', 'admin@gmail.com', 'admin', 'jl. Kircon ', 'bandung', '2014-05-01', 1, 2, 2, 2, 1, '', 'application/../asset/upload/03052014-admin.jpg'),
+(25, 'dani', 'danzevo', 'dani.nugrahadi@gmail.com', 'danzevo', 'jl kircon', 'bandung', '2014-05-03', 1, 0, 0, 0, 2, 'f73610399828660b4cca02a0f711db1d', 'application/../asset/upload/03052014-danzevo.jpg');
+>>>>>>> 3efa498c1fa084a285d3a579de3412dec2ce2ed0
