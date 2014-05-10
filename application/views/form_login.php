@@ -1,7 +1,7 @@
 <div id='contData'>
 	<div class='wrapper-login'>
 		<div class='row' style='margin-top:0%;margin-left:18%'>
-			<div class='col-xs-8'>
+			<div class='col-xs-10'>
 				<form id='login' class='form-horizontal' role='form'>
 					<div class='form-group'>
 						<p><em><h3>Welcome To Myweb</h3></em></button>
